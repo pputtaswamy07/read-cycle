@@ -1,17 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { BookService, Book } from '../book.service';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-book-list',
   templateUrl: './book-list.component.html',
   styleUrls: ['./book-list.component.scss'],
+  standalone: true,
+  imports: [CommonModule],
 })
-export class BookListComponent implements OnInit {
-  books: Book[] = [];
-
-  constructor(private bookService: BookService) {}
-
-  ngOnInit(): void {
-    this.books = this.bookService.getBooks();
-  }
-}
+export class BookListComponent {}
