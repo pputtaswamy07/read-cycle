@@ -1,34 +1,33 @@
 <header class="text-gray-600 body-font">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-            <button
-                class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
-                routerLink="/">
-                <div class="bg-saffron-500 p-2 rounded-full">
+            <button class="custom-button" routerLink="/">
+                <div class="icon-container">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="2" class="w-6 h-6 mr-2" viewBox="0 0 24 24">
+                        stroke-linejoin="round" stroke-width="2" class="icon" viewBox="0 0 24 24">
                         <path d="M12 2l7 5-7 5-7-5 7-5zM2 7l10 7 10-7M2 17l10 5 10-5"></path>
                     </svg>
                 </div>
             </button>
+
 
             <span class="ml-3 text-xl">ReadCycle</span>
         </a>
         <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
             <a class="mr-5 hover:text-gray-900" routerLink="/bookList">Book for free</a>
             <a class="mr-5 hover:text-gray-900" routerLink="/addBook">Add a Book</a>
+
         </nav>
-        <div class="flex items-center mt-4 md:mt-0">
-            <input type="text" placeholder="Search..."
-                class="py-2 px-4 border border-gray-300 rounded-l-md focus:outline-none focus:border-indigo-500">
-            <button
-                class="inline-flex items-center bg-gray-100 border-0 py-2 px-3 focus:outline-none hover:bg-gray-200 rounded-r-md text-base">
+        <div class="search-container">
+            <input type="text" placeholder="Search..." class="search-input">
+
+            <button class="search-button">
                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    class="w-4 h-4" viewBox="0 0 24 24">
+                    class="search-icon" viewBox="0 0 24 24">
                     <path d="M21 21l-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0z"></path>
                 </svg>
             </button>
+            <button> <a class="mr-5 hover:text-gray-900" routerLink="/loginPage">login</a></button>
         </div>
-
     </div>
 </header>
