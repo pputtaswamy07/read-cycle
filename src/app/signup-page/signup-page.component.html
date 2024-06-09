@@ -1,0 +1,14 @@
+<div class="signup-container">
+    <h2>Sign Up</h2>
+    <form (ngSubmit)="onSignUp()">
+        <div>
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" [(ngModel)]="signupEmail" name="signupEmail" required>
+        </div>
+        <div>
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" [(ngModel)]="signupPassword" name="signupPassword" required>
+        </div>
+        <button type="submit">Sign Up</button>
+    </form>
+</div>
