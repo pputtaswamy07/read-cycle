@@ -5,6 +5,7 @@ import { BookListComponent } from './book-list/book-list.component';
 import { AddBookComponent } from './book-details/add-book.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
+import { FormsModule } from '@angular/forms'; // Import FormsModule
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,7 +16,7 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), FormsModule],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

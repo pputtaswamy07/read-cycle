@@ -1,1 +1,14 @@
-<h1>book list</h1>
+<div class="book-list">
+    <label for="genre">Select Genre:</label>
+    <select id="genre" [(ngModel)]="selectedGenre">
+        <option *ngFor="let genre of genres" [value]="genre">{{genre}}</option>
+    </select>
+
+
+    <div>
+        <label for="language">Select Language:</label>
+        <select id="language" [(ngModel)]="selectedLanguage">
+            <option *ngFor="let language of languages" [value]="language">{{language}}</option>
+        </select>
+    </div>
+</div>
