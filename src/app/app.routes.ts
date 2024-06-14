@@ -11,7 +11,7 @@ export const routes: Routes = [
   { path: 'bookList', component: BookListComponent },
   { path: 'addBook', component: AddBookComponent },
   { path: 'loginPage', component: LoginPageComponent },
-  { path: 'signupPage', component: SignupPageComponent },
+  { path: 'signup', component: SignupPageComponent },
 ];
 
 @NgModule({
