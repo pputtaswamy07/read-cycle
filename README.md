@@ -1,27 +1,50 @@
-# ReadCycle
+# Book Recycling Website
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
+Welcome to the Book Recycling Website project! This Angular-based web application allows users to recycle their old books by giving them away to others who might find them useful. 
 
-## Development server
+## Table of Contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **User Registration and Authentication**: Users can sign up and log in.
+- **Book Listing**: Users can list books they want to recycle.
+- **Search and Filter**: Search for books by title, author, or genre.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation
 
-## Running unit tests
+To set up the project locally, follow these steps:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. **Clone the repository**
+    ```bash
+    git clone https://github.com/yourusername/book-recycling.git
+    cd book-recycling
+    ```
 
-## Running end-to-end tests
+2. **Install dependencies**
+    ```bash
+    npm install
+    ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. **Run the development server**
+    ```bash
+    ng serve
+    ```
+    Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Further help
+## Usage
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Prerequisites
+
+- Node.js and npm installed on your machine.
+- Angular CLI installed globally (`npm install -g @angular/cli`).
+
+
