@@ -1,0 +1,23 @@
+h2 {
+  color: #333;
+  border-bottom: 2px solid #161515;
+  padding-bottom: 0.5em;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 0.5em 0;
+}
+
+.book-list {
+  max-width: 600px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* This allows items to wrap to the next line if they don't fit */
+  gap: 16px; /* Optional: adds space between the items */
+}
