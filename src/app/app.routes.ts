@@ -5,6 +5,7 @@ import { BookListComponent } from './book-list/book-list.component';
 import { AddBookComponent } from './book-details/add-book.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
+import { DonateComponent } from './donate/donate.component';
 import { FormsModule } from '@angular/forms'; // Import FormsModule
 
 export const routes: Routes = [
@@ -14,6 +15,7 @@ export const routes: Routes = [
   { path: 'addBook', component: AddBookComponent },
   { path: 'loginPage', component: LoginPageComponent },
   { path: 'signup', component: SignupPageComponent },
+  { path: 'donate', component: DonateComponent },
 ];
 
 @NgModule({
