@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms'; // Import FormsModule
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'bookList', component: BookListComponent },
   { path: 'addBook', component: AddBookComponent },
   { path: 'loginPage', component: LoginPageComponent },
