@@ -17,13 +17,15 @@ describe('AppComponent', () => {
   it(`should have the 'read-cycle' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('read-cycle');
+    expect(app['title']).toEqual('read-cycle');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, read-cycle');
+    expect(compiled.querySelector('h1')?.textContent).toContain(
+      'Hello, read-cycle'
+    );
   });
 });
