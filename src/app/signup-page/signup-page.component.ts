@@ -1,23 +1,40 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
-  selector: 'app-signup-page',
-  standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink],
+  selector: 'app-register',
   templateUrl: './signup-page.component.html',
+  standalone: true,
+  imports: [ReactiveFormsModule],
   styleUrls: ['./signup-page.component.scss'],
 })
 export class SignupPageComponent {
-  signupEmail: string | undefined;
-  signupPassword: string | undefined;
-  isSignUpVisible: any;
+  fb = inject(FormBuilder);
+  http = inject(HttpClient);
+  router = inject(Router);
+  authService = inject(AuthService);
 
-  constructor() {}
+  form = this.fb.nonNullable.group({
+    username: ['', Validators.required],
+    email: ['', Validators.required],
+    password: ['', Validators.required],
+  });
+  errorMessage: string | null = null;
 
-  onSignUp() {
-    console.log('Sign Up:', this.signupEmail, this.signupPassword);
+  onSubmit(): void {
+    const rawForm = this.form.getRawValue();
+    this.authService
+      .register(rawForm.email, rawForm.username, rawForm.password)
+      .subscribe({
+        next: () => {
+          this.router.navigateByUrl('/home');
+        },
+        error: (err) => {
+          this.errorMessage = err.code;
+        },
+      });
   }
 }
