@@ -1,0 +1,36 @@
+<div class="add-book-form">
+    <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="title">Title</label>
+            <input id="title" formControlName="title" type="text">
+            <div *ngIf="bookForm.get('title')?.invalid && bookForm.get('title')?.touched">
+                Title is required
+            </div>
+        </div>
+
+        <div>
+            <label for="author">Author</label>
+            <input id="author" formControlName="author" type="text">
+            <div *ngIf="bookForm.get('author')?.invalid && bookForm.get('author')?.touched">
+                Author is required
+            </div>
+        </div>
+
+        <div>
+            <label for="description">Description</label>
+            <textarea id="description" formControlName="description"></textarea>
+        </div>
+
+        <div>
+            <label for="publishedYear">Published Year</label>
+            <input id="publishedYear" formControlName="publishedYear" type="number">
+        </div>
+
+        <div>
+            <label for="genre">Genre</label>
+            <input id="genre" formControlName="genre" type="text">
+        </div>
+
+        <button type="submit" [disabled]="bookForm.invalid">Add Book</button>
+    </form>
+</div>

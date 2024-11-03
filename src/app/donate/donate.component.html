@@ -1,1 +1,35 @@
-<p>donate works!</p>
+<div class="donation-container">
+    <div class="donation-card">
+        <h1>Make a Donation</h1>
+        <p class="subtitle">Your support makes a difference <i class="fa-solid fa-heart"></i></p>
+
+        <form [formGroup]="donationForm" (ngSubmit)="onSubmit()">
+            <div class="amount-options">
+                <button type="button" *ngFor="let amount of predefinedAmounts"
+                    [class.active]="selectedAmount === amount" (click)="selectAmount(amount)">
+                    ${{amount}}
+                </button>
+                <div class="custom-amount">
+                    <input type="number" formControlName="customAmount" placeholder="Custom Amount"
+                        (input)="onCustomAmount()">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="text" formControlName="fullName" placeholder="Full Name">
+            </div>
+
+            <div class="form-group">
+                <input type="email" formControlName="email" placeholder="Email Address">
+            </div>
+
+            <div class="form-group">
+                <textarea formControlName="message" placeholder="Leave a message (optional)"></textarea>
+            </div>
+
+            <button type="submit" class="donate-button" [disabled]="!donationForm.valid">
+                Donate Now
+            </button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,135 @@
+.donation-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+
+  .donation-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    .subtitle {
+      color: #7f8c8d;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .amount-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    button {
+      padding: 1rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 0.5rem;
+      background: transparent;
+      color: #2c3e50;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-color: #3498db;
+        color: #3498db;
+      }
+
+      &.active {
+        background: #3498db;
+        border-color: #3498db;
+        color: white;
+      }
+    }
+
+    .custom-amount {
+      grid-column: 1 / -1;
+
+      input {
+        width: 100%;
+        padding: 1rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 0.5rem;
+        font-size: 1.1rem;
+
+        &:focus {
+          border-color: #3498db;
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        border-color: #3498db;
+        outline: none;
+      }
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+  }
+
+  .donate-button {
+    width: 100%;
+    padding: 1rem;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: #2980b9;
+    }
+
+    &:disabled {
+      background: #bdc3c7;
+      cursor: not-allowed;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .donation-container {
+    padding: 1rem;
+
+    .donation-card {
+      padding: 1.5rem;
+    }
+
+    .amount-options {
+      grid-template-columns: 1fr;
+    }
+  }
+}

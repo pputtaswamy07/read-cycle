@@ -5,28 +5,29 @@
   justify-content: center;
   height: 100vh;
   text-align: center;
-}
 
-.logo-text {
-  font-weight: bold;
-  display: inline-flex; /* Aligns the icon and text in a row */
-  align-items: center; /* Vertically centers the icon and text */
-  font-size: 2rem; /* Adjust the font size as needed */
-}
+  // Nested selectors (SCSS feature)
+  .logo-text {
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    font-size: 4rem;
 
-.logo-text i {
-  margin-right: 0.5rem; /* Creates space between the icon and the text */
-}
+    i {
+      margin-right: 0.5rem;
+    }
+  }
 
-.quote {
-  font-size: 1rem; /* Smaller font size for the quote */
-  margin-top: 1rem; /* Adds some space between the logo and the quote */
-  font-style: italic; /* Italic style for the quote */
-}
-.overlay {
-  // Semi-transparent overlay
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  color: white;
+  .quote {
+    font-size: 1rem;
+    margin-top: 1rem;
+    font-style: italic;
+  }
+
+  .overlay {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+  }
 }
