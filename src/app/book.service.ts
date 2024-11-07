@@ -9,7 +9,7 @@ export interface Book {
   description?: string;
   publishedYear?: number;
   genre?: string;
-  images?: string[]; //adding images
+  language: string; //adding images
 }
 
 @Injectable({
