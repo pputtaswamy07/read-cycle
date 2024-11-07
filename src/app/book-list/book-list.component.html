@@ -1,14 +1,38 @@
-<div class="book-list">
-    <label for="genre">Select Genre:</label>
-    <select id="genre" [(ngModel)]="selectedGenre">
-        <option *ngFor="let genre of genres" [value]="genre">{{genre}}</option>
-    </select>
+<div class="book-list-container">
+    <h1>Search Books</h1>
 
+    <div class="filters">
+        <div class="filter-item">
+            <label for="genre">Genre:</label>
+            <select id="genre" [(ngModel)]="selectedGenre">
+                <option value="">All</option>
+                <option *ngFor="let genre of genres" [value]="genre">{{ genre }}</option>
+            </select>
+        </div>
 
-    <div>
-        <label for="language">Select Language:</label>
-        <select id="language" [(ngModel)]="selectedLanguage">
-            <option *ngFor="let language of languages" [value]="language">{{language}}</option>
-        </select>
+        <div class="filter-item">
+            <label for="language">Language:</label>
+            <select id="language" [(ngModel)]="selectedLanguage">
+                <option value="">All</option>
+                <option *ngFor="let language of languages" [value]="language">{{ language }}</option>
+            </select>
+        </div>
+
+        <button (click)="onSearch()">Search</button>
+    </div>
+
+    <div class="results">
+        <div *ngIf="booksFetched && filteredBooks.length === 0" class="no-books">
+            <p>No books found.</p>
+        </div>
+
+        <ul *ngIf="filteredBooks.length > 0" class="book-list">
+            <li *ngFor="let book of filteredBooks" class="book-item">
+                <h3>{{ book.title }}</h3>
+                <p>Author: {{ book.author }}</p>
+                <p>Genre: {{ book.genre }}</p>
+                <p>Language: {{ book.language }}</p>
+            </li>
+        </ul>
     </div>
 </div>

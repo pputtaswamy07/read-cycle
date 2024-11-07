@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BookService, Book } from '../book.service';
@@ -10,7 +10,7 @@ import { BookService, Book } from '../book.service';
   standalone: true,
   imports: [CommonModule, FormsModule],
 })
-export class BookListComponent {
+export class BookListComponent implements OnInit {
   genres: string[] = [
     'Action',
     'Comedy',
@@ -34,4 +34,40 @@ export class BookListComponent {
 
   selectedGenre: string = '';
   selectedLanguage: string = '';
+  books: Book[] = [];
+  filteredBooks: Book[] = [];
+  booksFetched: boolean = false;
+
+  constructor(private bookService: BookService) {}
+
+  ngOnInit(): void {
+    // No initial book fetching
+  }
+
+  onSearch(): void {
+    this.fetchBooks();
+  }
+
+  fetchBooks(): void {
+    this.bookService.getBooks().subscribe(
+      (books) => {
+        this.books = books;
+        this.filterBooks();
+        this.booksFetched = true;
+      },
+      (error) => {
+        console.error('Error fetching books', error);
+      }
+    );
+  }
+
+  filterBooks(): void {
+    this.filteredBooks = this.books.filter((book) => {
+      return (
+        (this.selectedGenre === '' || book.genre === this.selectedGenre) &&
+        (this.selectedLanguage === '' ||
+          book.language === this.selectedLanguage)
+      );
+    });
+  }
 }
