@@ -6,12 +6,48 @@
   height: 100vh;
   text-align: center;
 
-  // Nested selectors (SCSS feature)
+  .search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .search-input {
+      padding: 18px; // Increased padding for larger size
+      border: 1px solid #203d33;
+      border-radius: 6px; // Slightly larger border radius
+      font-size: 20px; // Increased font size
+      width: 300px; // Increased width for better visibility
+    }
+
+    .search-button {
+      background-color: #4a88b1;
+
+      border: none;
+      padding: 18px 20px; // Increased padding for larger button
+      cursor: pointer;
+      border-radius: 6px; // Slightly larger border radius
+      margin-left: 8px; // Increased margin for better spacing
+      display: flex;
+      align-items: center;
+
+      .search-icon {
+        width: 28px; // Increased icon size
+        height: 28px; // Increased icon size
+        color: #fff;
+      }
+
+      &:hover {
+        background-color: #4a88b1;
+      }
+    }
+  }
+
   .logo-text {
     font-weight: bold;
     display: inline-flex;
     align-items: center;
     font-size: 4rem;
+    color: #ffffff;
 
     i {
       margin-right: 0.5rem;
@@ -22,6 +58,7 @@
     font-size: 1rem;
     margin-top: 1rem;
     font-style: italic;
+    color: #ffffff;
   }
 
   .overlay {
