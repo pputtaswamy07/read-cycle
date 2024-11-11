@@ -1,36 +1,28 @@
-<header class="text-gray-600 body-font">
+<header class="header">
     <div class="container">
         <a>
             <button class="custom-button" routerLink="/">
                 <div>
-                    <i class="fa  fa-house"></i>
+                    <i class="fa fa-house"></i>
                 </div>
             </button>
         </a>
-
-        <nav class="md:ml-auto flex flex-wrap items-center text-base justify-right">
-            <a class="mr-5 hover:text-gray-900" routerLink="/bookList">Book for free</a>
-            <a class="mr-5 hover:text-gray-900" routerLink="/addBook">Add a Book</a>
+        <nav class="nav">
+            <a class="nav-link" routerLink="/bookList">Book for free</a>
+            <a class="nav-link" routerLink="/addBook">Add a Book</a>
         </nav>
         <div class="search-container">
-            <input type="text" placeholder="Search your book..." class="search-input">
-            <button class="search-button">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    class="search-icon" viewBox="0 0 24 24">
-                    <path d="M21 21l-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0z"></path>
-                </svg>
-            </button>
             <div>
                 <button class="icon-button">
                     <a routerLink="/donate">
-                        <i class="fas fa-hand-holding-usd "></i>
-                        <span class="tooltip-text">donate</span>
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <span class="tooltip-text">Donate</span>
                     </a>
                 </button>
                 <button class="icon-button">
                     <a class="login" routerLink="/loginPage">
                         <i class="fas fa-user"></i>
-                        <span class="tooltip-text">login</span>
+                        <span class="tooltip-text">Login</span>
                     </a>
                 </button>
             </div>
